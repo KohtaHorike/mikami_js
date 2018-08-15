@@ -1,3 +1,5 @@
+//定数
+const defalt_category_cnt = 4;
 //タブの切り替え
 $(function() {
     //参考URL:http://blog.three-co.jp/web/558/
@@ -17,14 +19,9 @@ $(function() {
     });
 });
 
-
-//--------categryの追加------------------
-
-
 $('#categoryAdd').on('click',function(){
     $('.categoryInput').addClass('open');
     i = i + 1;
-
     //----最後に入力されたテキストを空にする
     $('.categoryInput').val('');
 });
@@ -32,36 +29,6 @@ $('#categoryAdd').on('click',function(){
 
 //ブックマーク詳細フォーム なんとか綺麗にしたい・・
 let bookmark_form = '<ul class="main_detail hide"><li class="bookmark_form"><p><span>Title</span><input type="text" class="form_title"></p><p><span>Url</span><input type="text" class="form_url"></p><p><span>Memo</span><textarea name="" cols="100" rows="6" class="form_memo"></textarea></p><div class="registerBtn">登録</div></li></ul>';
-
-
-
-// //クリックされたら・・
-// $( '.categoryInput' ).keypress( function ( e ) {
-//     if ( e.which == 13 ) {
-
-//         //iの回数を保存したい
-//         //ローカルストレージに i を保存
-//         localStorage.setItem('i_count', i);
-
-//         //テキストエリアに入力されたデータ
-//         let v_category = $('.categoryInput').val();
-
-//         //ローカルストレージに v を保存
-//         localStorage.setItem('category' + i, v_category);
-
-//         // カテゴリ追加
-//         let category_item =  '<li id="category' + '_' + i + ' " ' + ' ' + 'class="category_item">' + v_category + '</li>' ;
-//         $('.tab').append(category_item);
-
-//         //再度非表示にする
-//         $('.categoryInput').removeClass('open');
-
-//         // --------------コンテンツ詳細の追加----------------------
-//         $('.mainContent').append(bookmark_form);
-
-//         return false;
-//     }
-// });
 
 //クリックされたら(配列Ver)・・
 $( '.categoryInput' ).keypress( function ( e ) {
@@ -78,9 +45,7 @@ $( '.categoryInput' ).keypress( function ( e ) {
         let categoryNo = 'category' + i;
 
         //カテゴリに基づく配列
-        let categoryObject = [
-            {'categoryName' : v_category}
-        ];
+        let categoryObject = {'categoryName' : v_category};
 
         //ローカルストレージに v を保存
         localStorage.setItem(categoryNo, JSON.stringify(categoryObject));
@@ -104,31 +69,15 @@ $( '.categoryInput' ).keypress( function ( e ) {
 //---カテゴリの数値----
 let get_i = parseInt(localStorage.getItem('i_count'),10); //10進法でカウント
 if(get_i){
-    for (v = 4; v <= get_i; v++) {
+    for (v = defalt_category_cnt; v <= get_i; v++) {
         if(localStorage.getItem('category' + v)){
-            let v_category = localStorage.getItem('category' + v);
-            $('.tab').append('<li id="category' + '_' + v + ' " ' + ' ' + 'class="category_item">' + v_category + '</li>');
+            let v_category = $.parseJSON(localStorage.getItem('category' + v));
+            console.log(v_category);
+            $('.tab').append('<li id="category' + '_' + v + ' " ' + ' ' + 'class="category_item">' + v_category.categoryName + '</li>');
             // $('#category' + v).val(v_category);
-
             // --------------コンテンツ詳細の追加----------------------
             $('.mainContent').append(bookmark_form);
         }
     }
 }
-var i = $('.category_item').length; //カテゴリの数を数えて初期値に入れる
-
-
-
-
-
-// /* オブジェクトの作り方*/
-// var object1 = {'a':'11', 'b':'22'};
-// console.dir(object1);
-// console.dir(object1.a);
-// console.dir(object1['a']);
-
-// var object3 = [
-//     {'a':'11', 'b':'22'},
-//     {'a':'11', 'b':'22'},
-//     {'a':'11', 'b':'22'}
-// ];
+let i = $('.category_item').length; //カテゴリの数を数えて初期値に入れる
