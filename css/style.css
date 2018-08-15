@@ -1,0 +1,212 @@
+a:link {
+    color: #333;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header {
+    padding: 20px 40px;
+    background-color: #0095E8;
+}
+
+h1 {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+
+main {
+    overflow: hidden;
+    width: 1280px;
+}
+
+/*-------------サイドバー---------------*/
+.sidebar {
+    float: left;
+    width: 350px;
+    min-height: 820px;
+    background-color: #EEEEEE;
+    padding: 30px 0;
+}
+
+.sidebar h2 {
+    font-size: 14px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.category_item {
+    width: 275px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    margin-left: 25px;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    line-height: 3;
+    font-weight: bold;
+    color: #009C90;
+    font-size: 16px;
+}
+
+.category_item:hover {
+    opacity: 0.8;
+}
+
+
+
+/*------------メインカラム---------------*/
+.mainContent{
+    float: left;
+    width: 930px;
+    min-height: 720px;
+    /* background-color: aquamarine; */
+    padding: 30px 0;
+}
+
+.main_detail {
+    padding: 0 30px;
+}
+
+.main_detail li {
+    border: 1px solid #5F9EA0;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.picBox {
+    float: left;
+}
+
+.picBox img {
+    width: 260px;
+    height: 160px;
+    margin-bottom: 15px;
+}
+
+.registerDay {
+    text-align: right;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.textInfo {
+    float: left;
+    padding: 0 20px;
+
+}
+
+.bkmTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.bkmTitle a:visited {
+    color: #333;
+}
+
+.bkmUrl {
+    margin-bottom: 20px;
+}
+
+.bkmMemo {
+    width: 300px;
+}
+
+
+
+
+/*---タブ機能----*/
+.hide {
+    display:none ;
+}
+
+
+/*----------カテゴリ追加----*/
+.open {
+    display: block;
+}
+
+.categoryInput {
+    width: 270px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    margin-left: 25px;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+#categoryAdd {
+    text-align: right;
+    font-size: 45px;
+    margin-right: 30px;
+}
+
+
+footer {
+    background-color: black;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+}
+
+
+/*-----入力フォーム-----------*/
+.bookmark_form {
+    border: #333 2px solid;
+}
+
+.bookmark_form p {
+    margin-bottom: 15px;
+}
+
+.bookmark_form span {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.form_title {
+    font-size: 16px;
+    margin-left: 13px;
+    width: 500px;
+}
+.form_url {
+    font-size: 16px;
+    margin-left: 25px;
+    width: 500px;
+}
+
+.form_memo {
+    font-size: 16px;
+    width: 700px;
+}
+
+.registerBtn {
+    text-align: center;
+    background-color: lightslategray;
+    color: #ffffff;
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    margin-top: 30px;
+    border-radius: 3px;
+}
+
+.registerBtn:hover {
+    opacity: 0.8;
+}
